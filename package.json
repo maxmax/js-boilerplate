@@ -8,7 +8,7 @@
     "dev:server": "webpack-dev-server --open --config webpack.dev.js",
     "watch": "webpack -w -d",
     "build": "webpack --config webpack.prod.js",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "lint": "node_modules/.bin/esw webpack.config.* src --color",
     "lint:watch": "npm run lint -- --watch"
   },
@@ -23,6 +23,7 @@
     "csv-loader": "2.1.1",
     "eslint": "4.7.0",
     "eslint-watch": "3.1.2",
+    "express": "4.15.4",
     "extract-text-webpack-plugin": "3.0.0",
     "file-loader": "0.11.2",
     "gh-pages": "1.0.0",

@@ -9,6 +9,14 @@ const extractSass = new ExtractTextPlugin({
   disable: process.env.NODE_ENV === "development"
 });
 
+const extractHtml = new HtmlWebpackPlugin({
+  title: 'Output Management landing',
+  filename: 'index.html',
+  template: 'src/template/index.ejs',
+  chunks:['main']
+  //hash: true,
+});
+
 module.exports = {
    entry: {
       main: ["babel-polyfill", "./src/index.js"]
@@ -19,6 +27,7 @@ module.exports = {
         title: 'Production'
       }),
 			extractSass,
+			extractHtml
 			//new BundleAnalyzerPlugin()
    ],
    output: {
