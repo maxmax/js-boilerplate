@@ -1,0 +1,10 @@
+@import "./reset";
+
+body {
+  background: whitesmoke;
+  padding: 40px;
+}
+
+@import "./view";
+@import "./loader";
+@import "./bar";

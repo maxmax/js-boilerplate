@@ -1,0 +1,43 @@
+{
+  "name": "js-boilerplate",
+  "version": "1.0.0",
+  "description": "JS Boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel dev:server lint:watch",
+    "dev:server": "webpack-dev-server --hot --inline",
+    "watch": "webpack -w -d",
+    "build": "webpack -p",
+    "deploy": "gh-pages -d build",
+    "lint": "node_modules/.bin/esw webpack.config.* src --color",
+    "lint:watch": "npm run lint -- --watch"
+  },
+  "devDependencies": {
+    "babel": "6.23.0",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-plugin-transform-async-to-generator": "6.24.1",
+    "babel-preset-env": "1.6.0",
+    "css-loader": "0.28.7",
+    "csv-loader": "2.1.1",
+    "eslint": "4.7.0",
+    "eslint-watch": "3.1.2",
+    "extract-text-webpack-plugin": "3.0.0",
+    "file-loader": "0.11.2",
+    "gh-pages": "1.0.0",
+    "html-webpack-plugin": "2.30.1",
+    "node-sass": "4.5.3",
+    "npm-run-all": "4.1.1",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.18.2",
+    "uglifyjs-webpack-plugin": "0.4.6",
+    "webpack": "3.6.0",
+    "webpack-dev-server": "2.8.2",
+    "webpack-merge": "4.1.0",
+    "xml-loader": "1.2.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "6.26.0",
+    "lodash": "4.17.4"
+  }
+}
