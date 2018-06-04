@@ -48,16 +48,98 @@ table {
 
 body {
   background: whitesmoke;
-  padding: 40px; }
+  padding: 40px;
+  font-size: 15px; }
 
-.view {
-  border: 1px solid green;
-  color: green; }
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit; }
 
-.loader {
-  border: 2px solid green; }
+.h1, h1 {
+  font-size: 2.5rem; }
 
-.bar {
-  border: 1px solid green; }
+.h2, h2 {
+  font-size: 2rem; }
+
+.h3, h3 {
+  font-size: 1.6rem; }
+
+.h4, h4 {
+  font-size: 1.4rem; }
+
+.h6, h5 {
+  font-size: 1.2rem; }
+
+b, strong {
+  font-weight: 700; }
+
+small {
+  font-size: .8em; }
+
+.panel {
+  padding: 15px;
+  border: 1px solid #ccc;
+  color: #000; }
+  .panel.panel-items {
+    padding: 5px 0px; }
+    .panel.panel-items section > ul li {
+      padding: 10px 50px 10px 15px;
+      border-top: 1px solid #ccc;
+      position: relative;
+      cursor: pointer; }
+      .panel.panel-items section > ul li::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -1px;
+        height: 100%;
+        width: 2px;
+        background: transparent; }
+      .panel.panel-items section > ul li::before {
+        content: "...";
+        position: absolute;
+        right: 15px;
+        top: 4px;
+        font-size: 18px;
+        color: #000;
+        opacity: 0; }
+      .panel.panel-items section > ul li:first-child {
+        border-top-width: 0px; }
+      .panel.panel-items section > ul li.-active {
+        color: green;
+        pointer-events: none; }
+        .panel.panel-items section > ul li.-active::after {
+          background: green; }
+      .panel.panel-items section > ul li.-loading {
+        opacity: .6; }
+        .panel.panel-items section > ul li.-loading::before {
+          opacity: 1; }
+
+.container-widgets {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  margin: 25px auto; }
+  .container-widgets > .col {
+    flex: 1;
+    box-sizing: border-box; }
+  .container-widgets > .col-2 {
+    flex: 2;
+    box-sizing: border-box; }
+  .container-widgets::after {
+    content: "";
+    clear: both;
+    float: none;
+    display: block; }
+  @media (max-width: 960px) {
+    .container-widgets {
+      display: block; } }
+
+.loader-container {
+  color: #ccc;
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map*/
