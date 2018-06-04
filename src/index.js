@@ -1,38 +1,16 @@
 import _ from 'lodash';
-import {makeRequest} from './common/request';
-import {bar} from './components/bar/index';
-import {foo} from './components/foo/index';
-
-import {home} from './containers/home';
-
+import {globalData} from './store/index';
+import {containerDashboard} from './containers/dashboard/index';
+// import {absApp} from './containers/absApp/index';
+// absApp(); // dev
 import './style/index.scss';
-import Data from './data/data.xml';
-
-const sayApp = () => {
-
-  console.log("Mount App!");
-
-	const intbar = bar("int bar info!");
-	const intfoo = foo("int foo info!");
-
-  home({title: "Home title", components: {intbar, intfoo}});
-
-  console.log("Data", Data);
-
-  //Async await
-  makeRequest('https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe');
-
-};
+// import Data from './data/data.xml';
 
 function component() {
-  var element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack', home({title: "Home title"})], ' ');
+  const element = document.createElement('div');
+  // Containers
+  element.innerHTML = _.join(['Dashboard', containerDashboard(globalData.dashboard)], ' ');
   element.classList.add('view');
-
-	sayApp();
-
   return element;
 }
 

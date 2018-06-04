@@ -1,24 +1,27 @@
-// "ES7" code, with async/await
-//ref XMLHttpRequest on fetch
+// XMLHttpRequest 
+
 function httpGet(url) {
   return new Promise(function (resolve, reject) {
     // do the usual Http request
-    let request = new XMLHttpRequest();
-    request.open('GET', url);
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
 
-    request.onload = function () {
-      if (request.status == 200) {
-        resolve(request.response);
+    xhr.onload = function () {
+      if (this.status == 200) {
+        resolve(this.response);
       } else {
-        reject(Error(request.statusText));
+        // reject(Error(xhr.statusText));
+        var error = new Error(this.statusText);
+        error.code = this.status;
+        reject(error);
       }
     };
 
-    request.onerror = function () {
+    xhr.onerror = function () {
       reject(Error('Network Error'));
     };
 
-    request.send();
+    xhr.send();
   });
 }
 
@@ -41,4 +44,14 @@ export const makeRequest = (url) => {
   }).catch(function (error) {
     console.log(error);
   });
+}
+
+// Default req
+
+export const getRq = (url) => {
+  if (url) {
+    return httpGet(url);
+  } else {
+    throw Error('Bad Url Format');
+  }
 }

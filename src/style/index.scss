@@ -1,10 +1,13 @@
 @import "./reset";
 
-body {
-  background: whitesmoke;
-  padding: 40px;
-}
+// base
+@import "./base";
 
+// ui
+@import "./panel";
+
+// Components
+@import "./layout";
 @import "./view";
 @import "./loader";
 @import "./bar";

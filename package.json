@@ -8,6 +8,7 @@
     "dev:server": "webpack-dev-server --open --config webpack.dev.js",
     "watch": "webpack -w -d",
     "build": "webpack --config webpack.prod.js",
+    "obfuscated": "webpack --config webpack.obfuscated.js",
     "deploy": "gh-pages -d dist",
     "lint": "node_modules/.bin/esw webpack.config.* src --color",
     "lint:watch": "npm run lint -- --watch"
@@ -41,6 +42,9 @@
   },
   "dependencies": {
     "babel-polyfill": "6.26.0",
-    "lodash": "4.17.4"
+    "etherscan-api": "8.0.4",
+    "lodash": "4.17.4",
+    "redux": "4.0.0",
+    "redux-saga": "0.16.0"
   }
 }

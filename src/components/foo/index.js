@@ -1,5 +1,5 @@
-export const foo = (x = "") => {
-  console.log('Foo!, return x');
-	console.log('x = ', x);
-	return x;
+// Foo
+export const foo = (str) => {
+  const tpl = `<div class="foo">${str}</div>`;
+	return tpl;
 }
