@@ -13,7 +13,7 @@
     "lint": "node_modules/.bin/esw webpack.config.* src --color",
     "lint:watch": "npm run lint -- --watch",
     "start-electron": "electron main.js",
-    "electron-mac": "electron-packager . --overwrite  --asar=true --platform=darwin --arch=x64 --icon=src/assets/app-icon/mac/app.icns --prune=true --out=release-builds"
+    "electron-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/app-icon/mac/app.icns --prune=true --out=release-builds"
   },
   "devDependencies": {
     "babel": "6.23.0",
