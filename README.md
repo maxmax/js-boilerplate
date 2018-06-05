@@ -10,3 +10,5 @@ You can view a live demo over at [Demo](https://maxmax.github.io/js-boilerplate/
 * `yarn obfuscated` modules obfuscated
 * `yarn deploy` gh-pages demo build
 * `yarn lint` eslint esw
+* `yarn start-electron` electron app
+* `yarn electron-mac` electron app electron-packager
