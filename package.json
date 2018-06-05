@@ -1,8 +1,8 @@
 {
   "name": "js-boilerplate",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "JS Boilerplate",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "npm-run-all --parallel dev:server lint:watch",
     "dev:server": "webpack-dev-server --open --config webpack.dev.js",
@@ -11,7 +11,9 @@
     "obfuscated": "webpack --config webpack.obfuscated.js",
     "deploy": "gh-pages -d dist",
     "lint": "node_modules/.bin/esw webpack.config.* src --color",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "start-electron": "electron main.js",
+    "electron-mac": "electron-packager . --overwrite  --asar=true --platform=darwin --arch=x64 --icon=src/assets/app-icon/mac/app.icns --prune=true --out=release-builds"
   },
   "devDependencies": {
     "babel": "6.23.0",
@@ -22,6 +24,9 @@
     "clean-webpack-plugin": "0.1.16",
     "css-loader": "0.28.7",
     "csv-loader": "2.1.1",
+    "electron": "2.0.2",
+    "electron-installer-dmg": "1.0.0",
+    "electron-packager": "12.1.0",
     "eslint": "4.7.0",
     "eslint-watch": "3.1.2",
     "express": "4.15.4",
