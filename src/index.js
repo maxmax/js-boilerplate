@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import {globalData} from './store/index';
+import {dashboardApp} from './store/index';
 import {containerDashboard} from './containers/dashboard/index';
 // import {absApp} from './containers/absApp/index';
 // absApp(); // dev
@@ -9,7 +9,7 @@ import './style/index.scss';
 function component() {
   const element = document.createElement('div');
   // Containers
-  element.innerHTML = _.join(['Dashboard', containerDashboard(globalData.dashboard)], ' ');
+  element.innerHTML = _.join(['Dashboard', containerDashboard(dashboardApp.dashboard)], ' ');
   element.classList.add('view');
   return element;
 }

@@ -20,6 +20,8 @@ export const widget = (props) => {
       <section id="${'section-' + barId}" class="body-section">${loading(title + " loading...")}</section>
     </div>`;
 
+    console.log("tpl================tpl", tpl);
+
     const returnTpl = {
       active: true,
       template: tpl

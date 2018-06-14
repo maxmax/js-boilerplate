@@ -1,9 +1,10 @@
 // Ghibli api - ducks
 import {rqe} from '../../common/req';
+import {Modal} from '../modal';
 
 // Ex Events
 
-const listEvents = (el, fn) => {
+const listEvents = (el, fn, api) => {
   let selectedLi;
   const elem = document.querySelector(el);
 
@@ -23,24 +24,18 @@ const listEvents = (el, fn) => {
     selectedLi = node;
     selectedLi.classList.add('-active');
 
-    if (fn) {
+    if (fn && api) {
       selectedLi.classList.add('-loading');
-      let reqData = rqe('https://ghibliapi.herokuapp.com/films/' + selectedLi.getAttribute('data-target'));
+      let reqData = rqe(api + selectedLi.getAttribute('data-target'));
       reqData.then(function(res) {
         fn(selectedLi, res);
       });
+    } else if (fn) {
+      console.log("fn!!!!!!!");
     }
 
   }
 
-}
-
-// Modal
-
-const Modal = (el, data) => {
-  console.log("Modal active data!", el);
-  console.log("Modal active data!", data);
-  setTimeout(function(){el.classList.remove('-loading')}, 500); // function on active
 }
 
 // Templates
@@ -59,11 +54,13 @@ export const filmTemplate = (props) => {
   return tpl;
 }
 
+const api = 'https://ghibliapi.herokuapp.com/films/';
+
 export const filmList = (props) => {
   const resLi = props.map(function(item) {
     return `<li id="${'item-' + item.id}" data-target="${item.id}" class="item">${item.title}</li>`;
   });
-  setTimeout(function(){listEvents('[data-tabs]', Modal);}, 0);
+  setTimeout(function(){listEvents('[data-tabs]', Modal, api);}, 0);
   return `<ul data-tabs>${resLi.join('')}</ul>`;
 }
 

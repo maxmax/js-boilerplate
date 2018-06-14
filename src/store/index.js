@@ -2,6 +2,7 @@
 import {widget} from '../components/widget/index';
 import {foo} from '../components/foo/index';
 import {filmTemplate, filmList, thumbYoutube} from '../components/ghibli/index'; // ghibli templates
+import {uploadForm} from '../components/upload/index'; // ghibli templates
 
 const widgetsData = {
   bar: {
@@ -38,6 +39,15 @@ const widgetsData = {
     url: "lEEmORyxpho",
     tmp: thumbYoutube
   },
+  bar5: {
+    active: true,
+    id: "baseBar5",
+    classNames: "panel col-2 ghibli-wg",
+    title: "gdfgsdfgsdfgsdfg",
+    embed: true,
+    url: "lEEmORyxpho",
+    tmp: uploadForm
+  },
   foo: "Footer widgets description!"
 }
 
@@ -47,10 +57,11 @@ const wdj = widget(components.bar);
 const wdj2 = widget(components.bar2);
 const wdj3 = widget(components.bar3);
 const wdj4 = widget(components.bar4);
-const wdjs = wdj + wdj2 + wdj3 + wdj4;
+const wdj5 = widget(components.bar5);
+const wdjs = wdj + wdj2 + wdj3 + wdj4 + wdj5;
 
 // global containers
-export const globalData = {
+export const dashboardApp = {
   dashboard: {
     active: true,
     title: `Widget Containers`,
