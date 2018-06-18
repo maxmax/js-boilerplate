@@ -1,9 +1,37 @@
-.panel {
-  padding: 15px;
+.widget {
+  padding: 0px;
+  margin: .5px;
   border: 1px solid #ccc;
   color: #000;
+
+  header {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    h1,
+    h2,
+    h3 {
+      font-size: 16px;
+      line-height: 1.1;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  section {
+    padding: 0px;
+  }
+
+  section > article {
+    padding: 15px;
+  }
+
   &.panel-items {
-    padding: 5px 0px;
+    // padding: 0px 0px;
+    section {
+      padding: 0px;
+    }
     section > ul {
       li {
         padding: 10px 50px 10px 15px;
@@ -47,4 +75,29 @@
       }
     }
   }
+
+  hr {
+    border-top: 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+  }
+
+  form {
+    .form-group {
+      margin-bottom: 15px;
+      label {
+        display: block;
+      }
+      .form-control {
+        display: block;
+        padding: 8px 0px;
+        border: 0px;
+        outline: 0px;
+        background: transparent;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+      }
+    }
+  }
+
 }

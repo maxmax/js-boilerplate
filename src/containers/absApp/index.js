@@ -70,3 +70,47 @@ export function absApp() {
   // End classification
   // reduxBasic();
 }
+
+/////////////////////////////////////////////////////
+
+export function runApp() {
+  const allUserData = [];
+  var userData = {
+      id: '094545',
+      fullName: 'Unknown',
+
+      setUserName: function(firstName, lastName)  {
+          this.fullName = firstName + ' ' + lastName;
+      }
+  }
+  // const generalLastName = 'Elison';
+
+  function logStuff(userData) {
+      if (typeof userData === 'string') {
+          console.log("userData:", userData);
+      } else if (typeof userData === 'object') {
+          for (var item in userData) {
+              console.log("item in userData:", userData);
+              console.log(item + ': ' + userData[item]);
+          }
+      }
+  }
+
+  function getInput(options, callback) {
+      allUserData.push(options);
+      if (typeof callback === 'function') {
+        callback(options);
+      }
+  }
+
+  function getUserInput(firstName, lastName, callback, callbackObj) {
+    callback.apply(callbackObj, [firstName, lastName]);
+  }
+
+  //
+  getInput({ name: 'Rich', speciality: 'JavaScript' }, logStuff);
+
+  getUserInput('John', 'Snow', userData.setUserName, userData);
+  console.log(userData.fullName); // John Snow
+
+}

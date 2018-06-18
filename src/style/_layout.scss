@@ -4,16 +4,18 @@
   //flex-direction: row;
   //align-items: stretch;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   // justify-content: center;
   justify-content: space-around;
   align-items: stretch;
   margin: 25px auto;
   > .col {
-    flex: 1;
+    flex: 33%;
     box-sizing: border-box;
   }
   > .col-2 {
-    flex: 2;
+    flex: 25%;
     box-sizing: border-box;
   }
   &::after {

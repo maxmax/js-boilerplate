@@ -4,10 +4,11 @@
 @import "./base";
 
 // ui
-@import "./panel";
+@import "../components/widget/widget";
+@import "../components/loading/loader";
+@import "../components/modal/modal";
 
 // Components
 @import "./layout";
 @import "./view";
-@import "./loader";
 @import "./bar";

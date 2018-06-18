@@ -8,19 +8,28 @@ import {loading} from '../../components/loading/index';
 //  return tpl;
 // }
 
+const widgetHeader = (title) => {
+  return `<header>
+    <h2>${title}</h2>
+  </header>`;
+}
+
+
 export const widget = (props) => {
 
-  const { active, id, title, data, tmp, classNames, order, embed, url } = props;
+  const { active, id, title, data, tmp, classNames, order, embed, url, option } = props;
+
   if (active) {
     const barId = 'bar-' + id;
     const classL = classNames || '';
     const orderL = order ? 'order:' + order + ';' : ""
 
-    const tpl = `<div id="${barId}" class="${'bar ' + classL}" style="${orderL}">
-      <section id="${'section-' + barId}" class="body-section">${loading(title + " loading...")}</section>
+    const tpl = `<div id="${barId}" class="${'widget bar ' + classL}" style="${orderL}">
+      ${title ? widgetHeader(title) : ''}
+      <section id="${'section-' + barId}" class="body-section">
+        ${loading(title + " loading...")}
+      </section>
     </div>`;
-
-    console.log("tpl================tpl", tpl);
 
     const returnTpl = {
       active: true,
@@ -32,7 +41,7 @@ export const widget = (props) => {
       const rqeData = rqe(data);
       rqeData.then(function(res) {
         const elem = document.getElementById('section-' + barId);
-        const elmTpl = tmp(res);
+        const elmTpl = tmp(res, option);
         elem.innerHTML = elmTpl;
       });
     }
