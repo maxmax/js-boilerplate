@@ -1,14 +1,16 @@
-// stored constants
-import {widget} from '../../components/widget/index';
-import {foo} from '../../components/foo/index';
-import {filmTemplate, filmList} from '../../components/ghibli/index'; // ghibli templates
-import {thumbYoutube} from '../../components/thumbs/index'; // ghibli templates
-import {uploadForm} from '../../components/upload/index'; // upload
-import {walletsWr} from '../../components/wallets/index'; // upload
+//Dashboard controller, import service, import globalService
+import {widget} from '../components/widget/index';
+import {foo} from '../components/foo/index';
+import {filmTemplate, filmList} from '../components/ghibli/index';
+import {thumbYoutube} from '../components/thumbs/index';
+import {uploadForm} from '../components/upload/index';
+import {walletsWr} from '../components/wallets/index';
 
 const ghibliapi = "https://ghibliapi.herokuapp.com/films/";
 const walletapi = "https://murmuring-plains-29509.herokuapp.com/api/contacts"
 const uploadapi = "http://localhost:7070/api/pic/upload";
+
+export const app = document.getElementById('main');
 
 const components = {
   bar: {
@@ -82,6 +84,7 @@ const wdj4 = widget(components.bar4);
 const wdj5 = widget(components.bar5);
 const wdj6 = widget(components.bar6);
 const wdjs = wdj + wdj2 + wdj3 + wdj4 + wdj5 + wdj6;
+
 
 // global containers
 export const dashboardApp = {

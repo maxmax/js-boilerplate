@@ -1,32 +1,39 @@
 import {rqe} from '../../common/req';
 import {loading} from '../../components/loading/index';
 
-// const emptyTemplate = () => {
-//  const tpl = `<div>
-//    <h2>Empty template</h2>
-//  </div>`;
-//  return tpl;
-// }
-
 const widgetHeader = (title) => {
   return `<header>
     <h2>${title}</h2>
   </header>`;
 }
 
-
 export const widget = (props) => {
 
-  const { active, id, title, data, tmp, classNames, order, embed, url, option } = props;
+  const {
+    active,
+    id,
+    title,
+    data,
+    tmp,
+    classNames,
+    order,
+    embed,
+    url,
+    option
+  } = props;
 
   if (active) {
     const barId = 'bar-' + id;
     const classL = classNames || '';
-    const orderL = order ? 'order:' + order + ';' : ""
+    const orderL = order
+      ? 'order:' + order + ';'
+      : ""
 
-    const tpl = `<div id="${barId}" class="${'widget bar ' + classL}" style="${orderL}">
-      ${title ? widgetHeader(title) : ''}
-      <section id="${'section-' + barId}" class="body-section">
+    const tpl = `<div id="${barId}" class="${ 'widget bar ' + classL}" style="${orderL}">
+      ${title
+      ? widgetHeader(title)
+      : ''}
+      <section id="${ 'section-' + barId}" class="body-section">
         ${loading(title + " loading...")}
       </section>
     </div>`;
@@ -36,7 +43,6 @@ export const widget = (props) => {
       template: tpl
     }
 
-    // Default data
     if (data) {
       const rqeData = rqe(data);
       rqeData.then(function(res) {
@@ -46,9 +52,8 @@ export const widget = (props) => {
       });
     }
 
-    // Default embed
     if (embed && url) {
-      setTimeout(function(){
+      setTimeout(function() {
         const elem = document.getElementById('section-' + barId);
         const elmTpl = tmp(url);
         elem.innerHTML = elmTpl;

@@ -1,4 +1,5 @@
 // Modal
+import {appendElement} from '../../common/helpers';
 
 export const Modal = (props) => {
   const {el, data, template} = props;
@@ -12,7 +13,7 @@ export const Modal = (props) => {
 
   const element = document.createElement('div');
   element.innerHTML = modalTmp;
-  document.body.appendChild(element);
+  appendElement(element);
 
   const close = document.querySelector(".modal-close");
   close.onclick = function() {

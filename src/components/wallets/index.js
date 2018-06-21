@@ -60,6 +60,5 @@ export const walletsWr = (props, option) => {
     postForm(option.post, 'form#newWallet');
   }, 0);
 
-
   return tpl;
 }
