@@ -7,7 +7,7 @@ const widgetHeader = (title) => {
   </header>`;
 }
 
-export const widget = (props) => {
+export const panel = (props) => {
 
   const {
     active,
@@ -29,7 +29,7 @@ export const widget = (props) => {
       ? 'order:' + order + ';'
       : ""
 
-    const tpl = `<div id="${barId}" class="${ 'widget bar ' + classL}" style="${orderL}">
+    const tpl = `<div id="${barId}" class="${ 'section ' + classL}" style="${orderL}">
       ${title
       ? widgetHeader(title)
       : ''}

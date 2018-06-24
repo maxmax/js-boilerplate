@@ -1,26 +1,26 @@
 // Beer Service
 import {panel} from '../components/panel/index';
-import {beerTemplate} from '../components/beer/index';
+import {uiTemplate} from '../components/ui/index';
 
 const beersapi = "https://api.punkapi.com/v2/beers";
 
 const components = {
   option: {
     active: true,
-    id: "beersRandom",
-    classNames: "panel beer-cover col-12",
-    title: "Beer random",
-    data: beersapi + "/random",
-    tmp: beerTemplate
+    id: "uiModules",
+    classNames: "col-12",
+    title: "components",
+    data: beersapi + "/54",
+    tmp: uiTemplate
   }
 }
 
 // in Select widgets
 
-export const componentsApp = {
+export const uiApp = {
   component_1: {
     active: true,
-    title: `Beer Container`,
+    title: `UI Container`,
     components: {
       bar: panel(components.option),
     }

@@ -1,10 +1,12 @@
-//.bar {
-//  border: 1px solid green;
-//}
+
 body {
-  background: whitesmoke;
-  padding: 40px;
-  font-size: 15px;
+  background: $bg;
+  padding: $body-padding;
+  font-size: $font-size;
+  line-height: $line-height;
+  @media (max-width: $media-landscape) {
+    padding: $body-padding-landscape;
+  }
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -40,4 +42,11 @@ b, strong {
 
 small {
   font-size: .8em;
+}
+
+hr {
+  border: 0px;
+  border-top: 1px solid $hr-color;
+  padding: 0;
+  margin: 0;
 }

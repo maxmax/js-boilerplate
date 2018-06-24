@@ -1,14 +1,17 @@
+@import "./variable";
 @import "./reset";
 
 // base
 @import "./base";
 
 // ui
-@import "../components/widget/widget";
+@import "../components/panel/panel";
 @import "../components/loading/loader";
 @import "../components/button/button";
+@import "../components/forms/forms";
 @import "../components/upload/upload";
 @import "../components/modal/modal";
+@import "../components/beer/beer";
 
 // Components
 @import "./layout";

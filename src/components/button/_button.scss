@@ -1,18 +1,37 @@
 button,
 .btn,
-.fileContainer {
-  font-family: inherit;
-  font-size: 13px;
-  border-radius: 0;
-  border: 1px solid #000;
-  background: transparent;
-  padding: 8px 12px;
+.fileContainer,
+.button,
+.button-primary {
+  font-size: $font-size;
+  border-radius: $btn-radius;
+  border: 1px solid $primary;
+  background: $btn-background;
+  padding: $btn-vertical $btn-horizontal;
   line-height: 1.1;
-  color: #000;
+  color: $body-color;
   outline: 0;
+  margin-bottom: $base-vertical;
   &:hover,
   &:focus,
   &.active {
-    opacity: .6;
+    opacity: .8;
+  }
+  &.button-secondary {
+    border: 1px solid $secondary;
+    color: $secondary;
+  }
+  &.button-success {
+    border: 1px solid $success;
+    color: $success;
+  }
+  &.button-warning &.button-error {
+    border: 1px solid $error;
+    color: $error;
+  }
+  &.button-link {
+    border: 1px solid transparent;
+    color: $link;
+    text-decoration: underline;
   }
 }

@@ -1,5 +1,5 @@
 //Dashboard controller, import service, import globalService
-import {widget} from '../components/widget/index';
+import {panel} from '../components/panel/index';
 import {foo} from '../components/foo/index';
 import {filmTemplate, filmList} from '../components/ghibli/index';
 import {thumbYoutube} from '../components/thumbs/index';
@@ -77,12 +77,12 @@ const components = {
 
 // in Select widgets
 // const components = widgetsData;
-const wdj = widget(components.bar);
-const wdj2 = widget(components.bar2);
-const wdj3 = widget(components.bar3);
-const wdj4 = widget(components.bar4);
-const wdj5 = widget(components.bar5);
-const wdj6 = widget(components.bar6);
+const wdj = panel(components.bar);
+const wdj2 = panel(components.bar2);
+const wdj3 = panel(components.bar3);
+const wdj4 = panel(components.bar4);
+const wdj5 = panel(components.bar5);
+const wdj6 = panel(components.bar6);
 const wdjs = wdj + wdj2 + wdj3 + wdj4 + wdj5 + wdj6;
 
 

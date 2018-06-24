@@ -1,28 +1,39 @@
+// Modal
+
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.38);
+  background: $modal-out;
+  z-index: 999999;
+
   .modal-content {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 600px;
+    max-width: 96%;
     transform: translate(-50%, -50%);
-    background: #fff;
-    padding: 30px;
+    width: $modal-width;
+    background: $modal-bg;
+    padding: $modal-padding;
+
     .close {
       position: absolute;
-      top: 15px;
-      right: 15px;
       font-size: 20px;
-      color: black;
       text-decoration: none;
-      border: 0px;
+      border: 0;
       background: transparent;
+      top: $base-padding;
+      right: $base-padding;
+      color: $modal-close;
       cursor: pointer;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }

@@ -27,8 +27,8 @@ const containerModule = (el) => {
 }
 
 export function moduleWrapper(props) {
-  const {label, component} = props;
-  const element = new newEl('div',{class: 'view-module', id: 'testTratotui', style: 'width: 600px;'});
+  const {id, label, component} = props;
+  const element = new newEl('section',{class: 'container view-module', id: id});
   element.innerHTML = _.join([label, containerModule(component)], ' ');
   return element;
 }

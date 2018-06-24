@@ -1,0 +1,67 @@
+// Global variable
+
+// Color
+$black: #000;
+$gray: #cccccc;
+$primary: #000;
+$secondary: #007bff;
+$secondary-alt: #80bdff;
+$success: #28a745;
+$error: #dc3545;
+$link: $secondary;
+$bg: whitesmoke;
+
+// Media
+
+$media-phones: 575.98px;
+$media-landscape: 767.98px;
+$media-tablets: 991.98px;
+$media-desktops: 1199.98px;
+
+// Body
+$body-padding: 50px;
+$body-color: $black;
+$body-padding-landscape: 10px;
+
+// Fonts
+$font-size: 15px;
+$line-height: 1.1;
+
+// HR
+$hr-color: $gray;
+
+// Border
+$border-color: $gray;
+
+// Row, base padding
+$base-padding: 15px;
+$base-vertical: $base-padding;
+$base-horizontal: $base-padding;
+
+// Item
+$item-vertical: 10px;
+$item-horizontal: $base-padding;
+
+// Button
+$btn-vertical: 10px;
+$btn-horizontal: $base-padding;
+$btn-radius: 0px;
+$btn-background: transparent;
+
+// Form
+$form-padding: $base-padding;
+$form-vertical: 10px;
+$form-horizontal: $base-padding;
+$form-border: $gray;
+$form-border-hover: $secondary-alt;
+$form-box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+
+// Modal
+$modal-out: rgba(0, 0, 0, 0.4);
+$modal-bg: white;
+$modal-padding: 30px;
+$modal-width: 600px;
+$modal-close: $black;
+
+// Panel
+$panel-background: rgba(255, 255, 255, 0.6);

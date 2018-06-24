@@ -1,78 +1,33 @@
-.view {
+.view,
+.view-module {
   margin-bottom: 60px;
 }
 
 .container-widgets {
-  //display: flex;
-  //flex-wrap: wrap;
-  //flex-direction: row;
-  //align-items: stretch;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  // justify-content: center;
   justify-content: space-around;
   align-items: stretch;
   margin: 25px auto;
+
   > .col {
     flex: 33%;
     box-sizing: border-box;
   }
+
   > .col-2 {
     flex: 25%;
     box-sizing: border-box;
   }
+
   &::after {
     content: "";
     clear: both;
     float: none;
     display: block;
   }
-  @media (max-width: 960px) {
+  @media (max-width: $media-tablets) {
     display: block;
-  }
-}
-
-// Terminal theme
-$bg-color:   #151515;
-$text-color: #3ebf0e;
-// $border: 1px solid #3ebf0e;
-$border: 1px solid rgba(62, 191, 14, 0.34);
-
-.terminal-theme {
-  background: $bg-color;
-  color: $text-color;
-  .widget {
-  	color: $text-color;
-    border: $border;
-    header {
-      border-bottom: $border;
-    }
-    form .form-group .form-control {
-      border-bottom: $border;
-      border-bottom-style: dashed;
-    }
-    button, .btn {
-      border: $border;
-      color: $text-color;
-      background: transparent;
-      padding: 8px 12px;
-      line-height: 1.1;
-    }
-    &.panel-items section > ul li, hr {
-      border-top: $border;
-      border-top-style: dashed;
-    }
-  }
-  .modal .modal-content {
-    background: $bg-color;
-    border: $border;
-    .close {
-      color: $text-color;
-    }
-  }
-  .fileContainer {
-    border: $border;
-    color: $text-color;
   }
 }
