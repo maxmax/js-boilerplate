@@ -88,6 +88,12 @@ hr {
   padding: 0;
   margin: 0; }
 
+.lead {
+  font-size: 1.2rem; }
+
+.text-center {
+  text-align: center; }
+
 .panel {
   padding: 0px;
   margin: .5px;
@@ -163,7 +169,8 @@ button,
   line-height: 1.1;
   color: #000;
   outline: 0;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  cursor: pointer; }
   button:hover, button:focus, button.active,
   .btn:hover,
   .btn:focus,
