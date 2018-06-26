@@ -17,6 +17,14 @@ const extractHtml = new HtmlWebpackPlugin({
   //hash: true,
 });
 
+const extractAbout = new HtmlWebpackPlugin({
+  title: 'Output Management landing',
+  filename: 'about.html',
+  template: 'src/template/about.html',
+  //chunks:['main']
+  //hash: true,
+});
+
 module.exports = {
    entry: {
       main: ["babel-polyfill", "./src/index.js"]
@@ -27,7 +35,8 @@ module.exports = {
         title: 'Production'
       }),
 			extractSass,
-			extractHtml
+			extractHtml,
+      extractAbout
 			//new BundleAnalyzerPlugin()
    ],
    output: {

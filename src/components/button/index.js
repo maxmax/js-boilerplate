@@ -10,6 +10,9 @@ export const uiButtons = () => {
     <button type="button" class="button button-warning">Button warning error danger</button>
     <a href="#" class="button button-link">Button link</a>
     <br />
+    <br />
+    <hr />
+    <br />
     <button type="button">Click Me!</button>
   </section>`;
   return tpl;

@@ -1,11 +1,8 @@
+import {documentApp} from '../services/globalService';
 // Helprers
 
+const APP = documentApp || document;
 // New element
-//const element = newEl('section',{
-//	class: 'hello',
-//	id: 'tratotui',
-//	style: 'border: 1px solid red'
-//});
 
 function attr(el, at, value){
 	at = {'for': 'htmlFor', 'class': 'class'}[at] || at;
@@ -20,9 +17,9 @@ function attr(el, at, value){
 
 export function newEl(tag = "div", params) {
   params = params || {};
-  var elem = document.createElementNS
-    ? document.createElementNS('http://www.w3.org/1999/xhtml', tag)
-    : document.createElement(tag);
+  var elem = APP.createElementNS
+    ? APP.createElementNS('http://www.w3.org/1999/xhtml', tag)
+    : APP.createElement(tag);
 
   for (var pr in params) {
     attr(elem, pr, params[pr]);
@@ -34,5 +31,11 @@ export function newEl(tag = "div", params) {
 // Append element
 
 export function appendElement(el, where){
-	(where || document.body).appendChild(el);
+	(where || APP.body).appendChild(el);
+}
+
+// getEl
+
+export function getEl(id) {
+	return APP.getElementById(id);
 }

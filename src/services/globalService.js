@@ -10,7 +10,8 @@ const ghibliapi = "https://ghibliapi.herokuapp.com/films/";
 const walletapi = "https://murmuring-plains-29509.herokuapp.com/api/contacts"
 const uploadapi = "http://localhost:7070/api/pic/upload";
 
-export const app = document.getElementById('main');
+export const documentApp = document;
+export const app = documentApp.getElementById('main');
 
 const components = {
   bar: {

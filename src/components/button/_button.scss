@@ -12,6 +12,7 @@ button,
   color: $body-color;
   outline: 0;
   margin-bottom: $base-vertical;
+  cursor: pointer;
   &:hover,
   &:focus,
   &.active {

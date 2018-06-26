@@ -1,4 +1,5 @@
 import {rqe} from '../../common/req';
+import {getEl} from '../../common/helpers';
 import {loading} from '../../components/loading/index';
 
 const widgetHeader = (title) => {
@@ -46,7 +47,7 @@ export const panel = (props) => {
     if (data) {
       const rqeData = rqe(data);
       rqeData.then(function(res) {
-        const elem = document.getElementById('section-' + barId);
+        const elem = getEl('section-' + barId);
         const elmTpl = tmp(res, option);
         elem.innerHTML = elmTpl;
       });
@@ -54,7 +55,7 @@ export const panel = (props) => {
 
     if (embed && url) {
       setTimeout(function() {
-        const elem = document.getElementById('section-' + barId);
+        const elem = getEl('section-' + barId);
         const elmTpl = tmp(url);
         elem.innerHTML = elmTpl;
       }, 0);
