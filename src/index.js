@@ -38,8 +38,6 @@ appendElement(counterInt(), app);
 (function () {
   let newhead = new Masthead({name: "custom", className: "custom-green"});
   let say = newhead.initContent();
-  let immut = newhead.returnImmutable();
-  immut;
   appendElement(say, app);
 }());
 
