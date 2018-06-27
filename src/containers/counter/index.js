@@ -8,6 +8,8 @@ const counterTmp = (props) => {
 
   const {id, value, actions} = props;
 
+  console.log("props=============props", props);
+
   const buttons = actions.map(function(item) {
     if (actions) {
       return `<button id="${item.el}">${item.text}</button>`;

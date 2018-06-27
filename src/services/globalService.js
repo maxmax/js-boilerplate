@@ -1,4 +1,5 @@
-//Dashboard controller, import service, import globalService
+// Dashboard controller, import service, import globalService
+// import { fromJS } from 'immutable';
 import {panel} from '../components/panel/index';
 import {foo} from '../components/foo/index';
 import {filmTemplate, filmList} from '../components/ghibli/index';
@@ -74,7 +75,7 @@ const components = {
     tmp: walletsWr
   },
   foo: "Footer widgets description!"
-}
+};
 
 // in Select widgets
 // const components = widgetsData;
@@ -84,7 +85,7 @@ const wdj3 = panel(components.bar3);
 const wdj4 = panel(components.bar4);
 const wdj5 = panel(components.bar5);
 const wdj6 = panel(components.bar6);
-const wdjs = wdj + wdj2 + wdj3 + wdj4 + wdj5 + wdj6;
+const panels = wdj + wdj2 + wdj3 + wdj4 + wdj5 + wdj6;
 
 
 // global containers
@@ -93,7 +94,7 @@ export const dashboardApp = {
     active: true,
     title: `Widget Containers`,
     components: {
-      bar: wdjs,
+      bar: panels,
       foo: foo(components.foo)
     }
   },

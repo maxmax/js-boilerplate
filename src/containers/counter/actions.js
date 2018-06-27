@@ -1,4 +1,5 @@
-import {store} from './store';
+// import {store} from './store';
+import {store} from '../../reducers';
 import {getEl} from '../../common/helpers';
 
 //render()
@@ -6,11 +7,6 @@ import {getEl} from '../../common/helpers';
 //  el.innerHTML = store.getState();
 //}
 //render(valueEl);
-
-store.subscribe(() =>
-  //render,
-  console.log("counterInt subscribe mount:", store.getState())
-)
 
 // dispatch
 //store.dispatch({ type: 'INCREMENT' })
@@ -20,12 +16,13 @@ store.subscribe(() =>
 //  store.dispatch({ type: 'INCREMENT' });
 // }());
 
+
 // Default INCREMENT - DECREMENT
 export const actionFn = (props) => {
   const {el, type, val} = props;
   el.addEventListener('click', function () {
     store.dispatch({ type: type });
-    val.innerHTML = store.getState();
+    val.innerHTML = store.getState().counter;
   });
 }
 
@@ -33,9 +30,9 @@ export const actionFn = (props) => {
 export const actionFnOdd = (props) => {
   const {el, type, val, odd} = props;
   el.addEventListener('click', function () {
-    if (store.getState() % odd !== 0) {
+    if (store.getState().counter % odd !== 0) {
       store.dispatch({ type: type });
-      val.innerHTML = store.getState();
+      val.innerHTML = store.getState().counter;
     }
   });
 }
@@ -46,7 +43,7 @@ export const actionAsync = (props) => {
   el.addEventListener('click', function () {
     setTimeout(function () {
       store.dispatch({ type: type });
-      val.innerHTML = store.getState();
+      val.innerHTML = store.getState().counter;
     }, timeout)
   });
 }
@@ -57,9 +54,9 @@ export const actionTimeleft = (props) => {
   el.addEventListener('click', function () {
     const timeleft = 10;
     const downloadTimer = setInterval(function(){
-      if (store.getState() < 30) {
+      if (store.getState().counter < 30) {
         store.dispatch({ type: type });
-        val.innerHTML = store.getState();
+        val.innerHTML = store.getState().counter;
       } else {
         clearInterval(downloadTimer);
       }
@@ -95,5 +92,5 @@ export function intEvent(props) {
 export function defEvent(el, type) {
   const getVal = getEl(el);
   store.dispatch({ type: type });
-  getVal.innerHTML = store.getState();
+  getVal.innerHTML = store.getState().counter;
 }

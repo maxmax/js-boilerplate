@@ -30,6 +30,7 @@ export const rqe = (url) => {
       // console.log('request succeeded with JSON response', response);
       return response;
     }).catch(function(error) {
-      console.log('request failed', error);
+      // console.log('request failed', error);
+      return {status: "error", statusText: error};
     })
 }

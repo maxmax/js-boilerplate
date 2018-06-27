@@ -17,13 +17,17 @@ const extractHtml = new HtmlWebpackPlugin({
   //hash: true,
 });
 
-const extractAbout = new HtmlWebpackPlugin({
-  title: 'Output Management landing',
-  filename: 'about.html',
-  template: 'src/template/about.html',
-  //chunks:['main']
-  //hash: true,
-});
+//const extractAbout = new HtmlWebpackPlugin({
+//  title: 'Output Management landing',
+//  filename: 'view/about.html',
+//  template: 'src/template/about.html',
+//});
+
+//const extractContacts = new HtmlWebpackPlugin({
+//  title: 'Output Management Contacts',
+//  filename: 'view/contacts.html',
+//  template: 'src/template/contacts.html',
+//});
 
 module.exports = {
    entry: {
@@ -36,7 +40,8 @@ module.exports = {
       }),
 			extractSass,
 			extractHtml,
-      extractAbout
+      // extractAbout,
+			// extractContacts
 			//new BundleAnalyzerPlugin()
    ],
    output: {
@@ -58,22 +63,27 @@ module.exports = {
 			 },
 			 {
 				 test: /\.css$/,
-				 use: [
-					 'style-loader',
-					 'css-loader'
-				 ]
+				  //use: [
+  				//	'style-loader',
+  				//	'css-loader'
+				  //]
+          use: [ 'css-loader', 'postcss-loader' ]
 			 },
 			 {
 				 test: /\.scss$/,
-				 use: extractSass.extract({
-					 use: [{
-						 loader: "css-loader"
-					 }, {
-						 loader: "sass-loader"
-					 }],
-					 // use style-loader in development
-					 fallback: "style-loader"
-				 })
+         use: extractSass.extract({
+           fallback: "style-loader",
+           use:[ 'css-loader', 'postcss-loader', 'sass-loader' ]
+         })
+  				//use: extractSass.extract({
+  				//	use: [{
+  				//		loader: "css-loader"
+  				//	}, {
+  				//		loader: "sass-loader"
+  				//	}],
+  				//	// use style-loader in development
+  				//	fallback: "style-loader"
+  				//})
 			 },
 			 {
 				 test: /\.(png|svg|jpg|gif|mp4)$/,

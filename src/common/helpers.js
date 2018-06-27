@@ -32,6 +32,7 @@ export function newEl(tag = "div", params) {
 
 export function appendElement(el, where){
 	(where || APP.body).appendChild(el);
+  // where.appendChild(el);
 }
 
 // getEl

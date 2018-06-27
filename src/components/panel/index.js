@@ -8,6 +8,14 @@ const widgetHeader = (title) => {
   </header>`;
 }
 
+const widgetEmpty = () => {
+  return `<article class="text-center">
+    <br />
+    <br />
+    <div>Unknown error, Panel empty!</div>
+  </article>`;
+}
+
 export const panel = (props) => {
 
   const {
@@ -48,8 +56,15 @@ export const panel = (props) => {
       const rqeData = rqe(data);
       rqeData.then(function(res) {
         const elem = getEl('section-' + barId);
-        const elmTpl = tmp(res, option);
-        elem.innerHTML = elmTpl;
+        if (res.status === "error") {
+          // const elem = getEl('section-' + barId);
+          const elmTpl = widgetEmpty();
+          elem.innerHTML = elmTpl;
+        } else {
+          // const elem = getEl('section-' + barId);
+          const elmTpl = tmp(res, option);
+          elem.innerHTML = elmTpl;
+        }
       });
     }
 
@@ -62,6 +77,7 @@ export const panel = (props) => {
     }
 
     return returnTpl.template;
+
   } else {
     console.log("bar: ", id, " - disabled");
     return "";
