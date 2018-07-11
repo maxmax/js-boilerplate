@@ -8,7 +8,7 @@ const components = {
   option: {
     active: true,
     id: "beersRandom",
-    classNames: "panel beer-cover col-12",
+    classNames: "panel beer-cover fl-col-12",
     title: "Beer random",
     data: beersapi + "/random",
     tmp: beerTemplate

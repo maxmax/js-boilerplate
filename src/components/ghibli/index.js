@@ -13,7 +13,7 @@ const tabFn = (el, fn, api, selectedTag) => {
       data: res,
       template: filmTemplate
     };
-    fn(fnOption );
+    fn(fnOption);
     selectedTag.classList.remove('-loading');
   });
 }

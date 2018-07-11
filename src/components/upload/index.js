@@ -1,6 +1,6 @@
-// Upload form (test nodeapp upload)
+// Upload form
 
-export const uploadForm = (props) => {
+const uploadFormTmp = (props) => {
   return `<article>
     <br />
     <form action="${props}" method="POST" enctype="multipart/form-data">
@@ -14,3 +14,5 @@ export const uploadForm = (props) => {
     </form>
   </article>`;
 }
+
+export const uploadForm = (props) => uploadFormTmp(props);

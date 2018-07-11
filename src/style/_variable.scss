@@ -11,6 +11,24 @@ $error: #dc3545;
 $link: $secondary;
 $bg: whitesmoke;
 
+$base-color: $black;
+
+// Sass color functions
+// darken( $base-color, 10% )
+// lighten( $base-color, 10% )
+// saturate( $base-color, 20% )
+// desaturate( $base-color, 20% )
+// adjust-hue( $base-color, 20% )
+// rgba( $base-color, .7 )
+// tint( $base-color, 10% )
+// shade( $base-color, 10% )
+// border: 1px solid darken($base-color, 20%);
+// text-shadow: 0 -1px 0 darken($base-color, 10%);
+// @include box-shadow(inset 0 1px 0 lighten($base-color, 20%));
+
+// Grid var
+$col-gap: 1em;
+
 // Media
 
 $media-phones: 575.98px;
@@ -32,6 +50,7 @@ $hr-color: $gray;
 
 // Border
 $border-color: $gray;
+$border-base: 1px solid $border-color;
 
 // Row, base padding
 $base-padding: 15px;

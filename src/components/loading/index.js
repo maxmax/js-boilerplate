@@ -1,4 +1,2 @@
 // Loading
-export const loading = (str) => {
-  return `<div class="loader-container">${str || 'Loading...'}</div>`;
-}
+export const loading = (str) => `<div class="loader-container">${str || 'Loading...'}</div>`

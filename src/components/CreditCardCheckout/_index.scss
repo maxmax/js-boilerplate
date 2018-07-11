@@ -1,0 +1,10 @@
+// CreditCardCheckout
+
+.credit_card_checkout {
+  > section {
+    @include row();
+    .form-group.expiry_date, .form-group.security_code {
+      @include col(1, 5);
+    }
+  }
+}

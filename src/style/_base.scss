@@ -1,3 +1,6 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 body {
   background: $bg;
@@ -7,6 +10,15 @@ body {
   @media (max-width: $media-landscape) {
     padding: $body-padding-landscape;
   }
+}
+
+p {
+  margin-bottom: $base-horizontal;
+}
+
+a {
+  color: $secondary;
+  text-decoration: underline;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -49,6 +61,18 @@ hr {
   border-top: 1px solid $hr-color;
   padding: 0;
   margin: 0;
+  max-width: 100%;
+  display: inline-block;
+  &.hr-auto {
+    margin: calc(#{$base-vertical} * 2) auto;
+  }
+  &.hr-sm {
+    width: 20px;
+  }
+}
+
+.paragraph {
+  margin-bottom: $base-vertical;
 }
 
 .lead {
@@ -57,4 +81,12 @@ hr {
 
 .text-center {
   text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }

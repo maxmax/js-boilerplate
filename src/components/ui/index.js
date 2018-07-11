@@ -1,6 +1,10 @@
+// UI Page
+
 import {uiButtons} from '../button/index';
 import {uiForms} from '../forms/index';
-// UI Page
+import {OrderSummary} from '../OrderSummary/index';
+import {CreditCardCheckout} from '../CreditCardCheckout/index';
+import {Sign} from '../Sign/index';
 
 export const uiTemplate = (props) => {
 
@@ -26,6 +30,9 @@ export const uiTemplate = (props) => {
     ${uiForms()}
     <br />
     <br />
+    ${OrderSummary()}
+    ${CreditCardCheckout()}
+    ${Sign()}
   </article>`;
 
   return tpl;

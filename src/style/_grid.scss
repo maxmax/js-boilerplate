@@ -1,0 +1,40 @@
+// Base grid
+// Row
+@mixin row ($gap: $col-gap) {
+  margin-left: -$gap;
+  margin-right: -$gap;
+
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+    float: none;
+  }
+}
+// Column
+@mixin col ($col, $sum, $gap: $col-gap, $first: false, $last: false) {
+  width: 100%;
+  display: block;
+  float: left;
+  padding-left: if($first, 0, $gap);
+  padding-right: if($last, 0, $gap);
+  @media only screen and (min-width: $media-phones) {
+    width: percentage($col/$sum);
+  }
+
+  &.fluid {
+    width: percentage($col/$sum);
+  }
+}
+
+.row {
+  @include row();
+
+  .col {
+    @include col(1, 1);
+
+    &.col-half {
+      @include col(1, 2);
+    }
+  }
+}

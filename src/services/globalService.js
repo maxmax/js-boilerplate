@@ -18,7 +18,7 @@ const components = {
   bar: {
     active: true,
     id: "baseBar",
-    classNames: "panel col ghibli-wg",
+    classNames: "panel fl-col ghibli-wg",
     title: "Ghibli api",
     data: ghibliapi + "2baf70d1-42bb-4437-b551-e5fed5a87abe",
     tmp: filmTemplate
@@ -26,7 +26,7 @@ const components = {
   bar2: {
     active: false,
     id: "baseBar2",
-    classNames: "panel col ghibli-wg",
+    classNames: "panel fl-col ghibli-wg",
     title: "Ghibli api 2",
     data: ghibliapi + "12cfb892-aac0-4c5b-94af-521852e46d6a",
     tmp: filmTemplate
@@ -34,7 +34,7 @@ const components = {
   bar3: {
     active: true,
     id: "baseBar3",
-    classNames: "panel panel-items col-2 ghibli-wg",
+    classNames: "panel panel-items fl-col-2 ghibli-wg",
     order: -1,
     title: "Ghibli api films",
     data: ghibliapi,
@@ -47,16 +47,16 @@ const components = {
   bar4: {
     active: true,
     id: "baseBar4",
-    classNames: "panel col-2 youtube-embed",
+    classNames: "panel fl-col-2 youtube-embed",
     title: "Youtube",
     embed: true,
-    url: "lEEmORyxpho",
+    url: "948B8C6JCDY",
     tmp: thumbYoutube
   },
   bar5: {
     active: true,
     id: "baseBar5",
-    classNames: "panel col-2",
+    classNames: "panel fl-col-2",
     title: "upload",
     embed: true,
     url: uploadapi,
@@ -65,7 +65,7 @@ const components = {
   bar6: {
     active: true,
     id: "baseBar6",
-    classNames: "panel panel-items col-2 wallets",
+    classNames: "panel panel-items fl-col-2 wallets",
     title: "wallets",
     data: walletapi,
     option: {

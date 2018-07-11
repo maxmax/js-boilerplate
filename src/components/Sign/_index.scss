@@ -1,0 +1,26 @@
+// CreditCardCheckout
+
+.sign {
+  width: 400px;
+  max-width: 100%;
+  margin: calc(#{$base-vertical} * 4) auto;
+  padding: $base-padding;
+  border: $border-base;
+  color: lighten( $base-color, 20% );
+  h1, h2 {
+    text-align: center;
+    margin-top: $base-vertical;
+    margin-bottom: calc(#{$base-vertical} * 2);
+    font-weight: 200;
+  }
+  .button {
+    display: block;
+    width: 100%;
+  }
+  &.sign-in {
+    display: block;
+  }
+  &.sign-up {
+    display: block;
+  }
+}
